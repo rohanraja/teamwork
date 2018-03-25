@@ -1,6 +1,5 @@
-<h1>Editing automated_test</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @automated_test %> |
-<%= link_to 'Back', automated_tests_path %>
+<%- model_class = AutomatedTest -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => AutomatedTest %></h1>
+</div>
+<%= render :partial => 'form' %>

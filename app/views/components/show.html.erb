@@ -1,24 +1,28 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Component -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Component %></h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @component.name %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:name) %></dt>
+      <dd><pre class="prettyprint"><%= @component.name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:type) %></dt>
+      <dd><pre class="prettyprint"><%= @component.type %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:description) %></dt>
+      <dd><pre class="prettyprint"><%= @component.description %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Type:</strong>
-  <%= @component.type %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              components_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_component_path(@component), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              component_path(@component),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @component.description %>
-</p>
-
-<p>
-  <strong>Automated test:</strong>
-  <%= @component.automated_test %>
-</p>
-
-<%= link_to 'Edit', edit_component_path(@component) %> |
-<%= link_to 'Back', components_path %>

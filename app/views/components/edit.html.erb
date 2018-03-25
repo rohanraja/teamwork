@@ -1,6 +1,5 @@
-<h1>Editing component</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @component %> |
-<%= link_to 'Back', components_path %>
+<%- model_class = Component -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Component %></h1>
+</div>
+<%= render :partial => 'form' %>

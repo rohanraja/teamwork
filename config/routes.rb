@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :automated_tests
+
   resources :components
 
   # The priority is based upon order of creation: first created -> highest priority.

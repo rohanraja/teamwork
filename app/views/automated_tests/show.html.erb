@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @automated_test.title %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @automated_test.type %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @automated_test.description %>
+</p>
+
+<p>
+  <strong>Component:</strong>
+  <%= @automated_test.component %>
+</p>
+
+<%= link_to 'Edit', edit_automated_test_path(@automated_test) %> |
+<%= link_to 'Back', automated_tests_path %>
